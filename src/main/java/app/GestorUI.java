@@ -143,8 +143,13 @@ public class GestorUI {
 			Rut rut = new Rut(scanner.nextLine());
 			System.out.print("Cargo (ej: Guía Turístico, Chofer): ");
 			String cargo = scanner.nextLine();
-
-			Direccion dir = new Direccion(0, "", "");
+			System.out.println("Calle;");
+			String calle = scanner.nextLine();
+			System.out.println("Número de casa: ");
+			int numCasa = Integer.parseInt(scanner.nextLine());
+			System.out.println("Ciudad: ");
+			String ciudad = scanner.nextLine();
+			Direccion dir = new Direccion(numCasa, calle, ciudad);
 			Empleado nuevoEmpleado = new Empleado(nombre, telefono, dir, rut, cargo);
 			nuevoEmpleado.registrar();
 			gestor.agregarEntidad(nuevoEmpleado);
