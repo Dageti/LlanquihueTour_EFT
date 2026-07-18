@@ -5,7 +5,7 @@ package model;
  */
 public class Persona {
 	private String nombre;
-	private int telefono;
+	private String telefono;
 	private Direccion direccion;
 	private Rut rut;
 
@@ -17,7 +17,7 @@ public class Persona {
 	 * @param direccion la dirección de la persona
 	 * @param rut       el RUT de la persona
 	 */
-	public Persona(String nombre, int telefono, Direccion direccion, Rut rut) {
+	public Persona(String nombre, String telefono, Direccion direccion, Rut rut) {
 		this.nombre = nombre;
 		this.telefono = telefono;
 		this.direccion = direccion;
@@ -36,11 +36,11 @@ public class Persona {
 		this.nombre = nombre;
 	}
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 

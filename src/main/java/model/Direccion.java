@@ -22,7 +22,7 @@ public class Direccion {
 	}
 
 	/**
-	 * Metodos Getters Y Setters de la clase Direccion
+	 * Métodos Getters Y Setters de la clase Direccion
 	 */
 	public int getNumero() {
 		return numero;

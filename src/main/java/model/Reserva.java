@@ -2,23 +2,42 @@ package model;
 
 import interfaces.Registrable;
 
+/**
+ * Clase Reserva representa la reserva de un tour por un cliente
+ */
+
 public class Reserva implements Registrable {
-	private int numeroReserva;
+	private int contadorReservas = 1;
+	private final int numeroReserva;
 	private Cliente cliente;
 	private Tour tour;
 
-	public Reserva(int numeroReserva, Cliente cliente, Tour tour) {
-		this.numeroReserva = numeroReserva;
+
+	/**
+	 * Constructor de la clase reserva, asigna el numero de reservas
+	 *
+	 * @param cliente cliente que realiza la reserva.
+	 * @param tour    tour que reserva el cliente.
+	 */
+	public Reserva(Cliente cliente, Tour tour) {
+		this.numeroReserva = contadorReservas++;
 		this.cliente = cliente;
 		this.tour = tour;
 	}
 
+	/**
+	 * Métodos Getters y Setters de la clase Reserva
+	 */
 	public int getNumeroReserva() {
 		return numeroReserva;
 	}
 
-	public void setNumeroReserva(int numeroReserva) {
-		this.numeroReserva = numeroReserva;
+	public int getContadorReservas() {
+		return contadorReservas;
+	}
+
+	public void setContadorReservas(int contadorReservas) {
+		this.contadorReservas = contadorReservas;
 	}
 
 	public Cliente getCliente() {
@@ -44,8 +63,13 @@ public class Reserva implements Registrable {
 
 	@Override
 	public String mostrarDatos() {
-		System.out.println("mostrando Reserva");
-		return "";
+		return toString();
+	}
+
+	@Override
+	public String toString() {
+		return "Reserva Nro " + numeroReserva + " | Cliente: " + cliente.getNombre() + " | Tour: " + tour.getNombreTour();
 	}
 }
+
 

@@ -2,14 +2,29 @@ package model;
 
 import interfaces.Registrable;
 
+/**
+ * Modelado de la clase Proveedor, representa a un externo que provee un servicio a Llanquihue Tour
+ */
 public class Proveedor extends Persona implements Registrable {
 	private String servicioProveedor;
 
-	public Proveedor(String nombre, int telefono, Direccion direccion, Rut rut, String servicioProveedor) {
+	/**
+	 * Constructor de la clase Proveedor
+	 *
+	 * @param nombre            nombre del proveedor
+	 * @param telefono          teléfono del proveedor
+	 * @param direccion         dirección del proveedor
+	 * @param rut               rut del proveedor
+	 * @param servicioProveedor servicio prestado por el proveedor
+	 */
+	public Proveedor(String nombre, String telefono, Direccion direccion, Rut rut, String servicioProveedor) {
 		super(nombre, telefono, direccion, rut);
 		this.servicioProveedor = servicioProveedor;
 	}
 
+	/**
+	 * Métodos Getters y Setters de la clase Proveedor
+	 */
 	public String getServicioProveedor() {
 		return servicioProveedor;
 	}
@@ -20,12 +35,17 @@ public class Proveedor extends Persona implements Registrable {
 
 	@Override
 	public void registrar() {
-		System.out.println("Registrando Cliente");
+		System.out.println("Registrando Proveedor");
 	}
 
 	@Override
 	public String mostrarDatos() {
-		return null;
+		return toString();
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + ", Servicio=" + servicioProveedor;
 	}
 }
 
